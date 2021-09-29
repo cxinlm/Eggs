@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background-image: radial-gradient(circle, #ffffff, #f9f7d4dc, #f7edabda, #f7e181d8, #f9b754da);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    user-select: none;
+    pointer-events: visible;
+  }
+
+.title {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    font-size: 30vh;
+    font-family: 'Gemunu Libre', sans-serif;
+    animation: glitch 1s linear infinite;
+}
+
+.subtitle {
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+    font-size: 5vh;
+    left: 9%;
+    font-family: 'Gemunu Libre', sans-serif;
+    animation: glitch 1s linear infinite;
+}
+
+@keyframes glitch{
+  2%,64%{
+    transform: translate(2px,0) skew(0deg);
+  }
+  4%,60%{
+    transform: translate(-2px,0) skew(0deg);
+  }
+  62%{
+    transform: translate(0,0) skew(5deg); 
+  }
+}
+
+.title:before,
+.title:after{
+  content: attr(title);
+  position: absolute;
+  left: 0;
+}
+
+.title:before{
+  animation: glitchTop 1s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop{
+  2%,64%{
+    transform: translate(2px,-2px);
+  }
+  4%,60%{
+    transform: translate(-2px,2px);
+  }
+  62%{
+    transform: translate(13px,-1px) skew(-13deg); 
+  }
+}
+
+.title:after{
+  animation: glitchBotom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBotom{
+  2%,64%{
+    transform: translate(-2px,0);
+  }
+  4%,60%{
+    transform: translate(-2px,0);
+  }
+  62%{
+    transform: translate(-22px,5px) skew(21deg); 
+  }
+}
+
+#scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    overflow: auto;
+}
+
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    animation-name: floating;
+    animation-iteration-count: infinite;
+    animation-duration: 3.3s;
+    animation-timing-function: ease-in-out;
+    transform: translate(-50%, -50%);
+  }
+  
+  @keyframes floating {
+    from {transform: translate(0, 0px);}
+    65% {transform: translate(0, 33px);}
+    to {transform: translate(0, 0px);}
+  }
+
+
+.container .object {
+    object-fit: contain;
+}
+
+.container #egg {
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    top: 0;
+    left: 90;
+}
+
+.container #egg2 {
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    top: 50;
+    left: 0;
+}
+
+.container #egg3 {
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    top: 96;
+    left: 69%;
+}
+
+.container #egg4 {
+    position: absolute;
+    width: 35%;
+    height: 35%;
+    top: 62%;
+    left: 31%;
+}
+
+.container #egg5 {
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    top: 67%;
+    left: 56%;
+}
+
+.container #info1 {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 80%;
+    left: 88%;
+}
+
+.container #info2 {
+    position: absolute;
+    width: 45%;
+    height: 45%;
+    top: 125%;
+    left: 57%;
+}
+
+.container #egg6 {
+    position: absolute;
+    width: 45%;
+    height: 45%;
+    top: 165%;
+    left: 27%;
+}
+
+.container #egg7 {
+    position: absolute;
+    width: 45%;
+    height: 45%;
+    top: 158%;
+    left: 87%;
+}
+
+.container #info3 {
+    position: absolute;
+    width: 45%;
+    height: 45%;
+    top: 219%;
+    left: 56%;
+}
+
+.container #info4 {
+    position: absolute;
+    width: 45%;
+    height: 45%;
+    top: 252%;
+    left: 16%;
+}
+
+.container #pizza {
+    position: absolute;
+    width: 45%;
+    height: 45%;
+    top: 282%;
+    left: 34%;
+}
+
+.container #info5 {
+    position: absolute;
+    width: 45%;
+    height: 45%;
+    top: 322%;
+    left: 61%;
+}
+
+.container #heart {
+    position: absolute;
+    width: 45%;
+    height: 45%;
+    top: 352%;
+    left: 21%;
+}
+
+.container #info6 {
+    position: absolute;
+    width: 43%;
+    height: 43%;
+    top: 392%;
+    left: 53%;
+}
+
+.container #info7 {
+    position: absolute;
+    width: 43%;
+    height: 43%;
+    top: 430%;
+    left: 9%;
+}
+
+.container #info8 {
+    position: absolute;
+    width: 41%;
+    height: 41%;
+    top: 457%;
+    left: 39%;
+}
+
+.container #final {
+    position: absolute;
+    width: 55%;
+    height: 55%;
+    top: 519%;
+    left: 16%;
+}
+
+.container #end {
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    top: 593%;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+@media (max-width: 300px) and (max-height: 500px) {
+
+ body {
+     width:max-content;
+     height:max-content;
+ }
+
+ .title {
+    width: 50%;
+    height: 50%;
+ }
+ .subtitle {
+    visibility: hidden;
+ }
+
+}
+

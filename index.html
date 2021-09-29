@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Eggs</title>
+      <link rel="stylesheet" type="text/css" href="style.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Gemunu+Libre:wght@200&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <h1 class="title">Eggs<br><span class="subtitle">Drag to explore (L or R for mouse)</span></h1>
+    <div id="scene">
+    <div class="container">
+        <img src="Images/1.png" class="object" id="egg" data-value="-2" alt="">
+        <img src="Images/2.png" class="object" id="egg2" data-value="-7" alt="">
+        <img src="Images/3.png" class="object" id="egg3" data-value="4" alt="">
+        <img src="Images/4.png" class="object" id="egg4" data-value="-6" alt="">
+        <img src="Images/5.png" class="object" id="egg5" data-value="8" alt="">
+        <img src="Images/6.png" class="object" id="info1" data-value="3" alt="">
+        <img src="Images/7.png" class="object" id="info2" data-value="-5" alt="">
+        <img src="Images/8.png" class="object" id="egg6" data-value="6" alt="">
+        <img src="Images/9.png" class="object" id="egg7" data-value="-3" alt="">
+        <img src="Images/10.png" class="object" id="info3" data-value="9" alt="">
+        <img src="Images/11.png" class="object" id="info4" data-value="-4" alt="">
+        <img src="Images/12.png" class="object" id="pizza" data-value="-4" alt="">
+        <img src="Images/13.png" class="object" id="info5" data-value="5" alt="">
+        <img src="Images/14.png" class="object" id="heart" data-value="-8" alt="">
+        <img src="Images/15.png" class="object" id="info6" data-value="7" alt="">
+        <img src="Images/16.png" class="object" id="info7" data-value="2" alt="">
+        <img src="Images/17.png" class="object" id="info8" data-value="5" alt="">
+        <img src="Images/18.png" class="object" id="final" data-value="-1" alt="">
+        <img src="Images/19.png" class="object" id="end" data-value="1" alt="">
+
+    </div>
+    </div>
+  <script type="text/javascript">
+    document.addEventListener("mousemove", parallax);
+    function parallax(e){
+      document.querySelectorAll(".object").forEach(function(move){
+
+        var moving_value = move.getAttribute("data-value");
+        var x = (e.clientX * moving_value) / 100;
+        var y = (e.clientY * moving_value) / 100;
+
+        move.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
+      });
+    }
+    </script>
+        <script type="text/JavaScript">
+          //Script courtesy of BoogieJack.com
+          var message="NoRightClicking";
+          function defeatIE() {if (document.all) {(message);return false;}}
+          function defeatNS(e) {if 
+          (document.layers||(document.getElementById&&!document.all)) {
+          if (e.which==2||e.which==3) {(message);return false;}}}
+          if (document.layers) 
+          {document.captureEvents(Event.MOUSEDOWN);document.onmousedown=defeatNS;}
+          else{document.onmouseup=defeatNS;document.oncontextmenu=defeatIE;}
+          document.oncontextmenu=new Function("return false")
+          </script>
+        <script src="scripts/draggable.js"></script>
+  </body>
+</html>
